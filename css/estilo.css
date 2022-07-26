@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.cabecario li {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+ul.cabecario li a {
+    list-style: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+}
+
+ul.cabecario li a:hover {
+    color: rgb(255, 0, 0);
+}
+
+nav.container_Nav {
+    text-align: center;
+}
+
+header.cabecario {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100px;
+}
+
+ul.rodape {
+    background-color: black;
+    font-family: sans-serif;
+    padding: 30px;
+    text-align: center;
+}
+
+ul a img {
+    height: 35px;
+    width: 30px;
+}
+
+ul.rodape li {
+    padding: auto;
+    color: white;
+    margin: 20px;
+    padding-top: 10px;
+    display: block;
+}
+
+div.corpo {
+    display: block;
+    text-align: center;
+    font-size: 3vw;
+}
+
+footer div ul.rodape a img {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 40%;
+}
+
+div.corpo div.dia {
+    color: yellow;
+    display: inline-block;
+    height: 25vh;
+    width: 22vw;
+    border: 1px solid rgb(58, 51, 51);
+    margin: 10px;
+    box-shadow: inset 0 0 1em gold, 0 0 1em green;
+}
+
+nav ul img {
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+.margem{
+    margin: 50px;
+    
+}
+.professoraC{
+    width: 20%;
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+.div_columns1{
+
+    float:left;
+}
+.div_columns2{
+
+    float:right;
+}
+.cardNotas{
+    margin: auto;
+    background-color: white;
+    height: 100%;
+    width: 400px;
+    border-radius: 5%;
+    border: 2px solid darkblue;
+}
+
+.modal {
+    position: fixed;
+    z-index: 10;
+    width: 50vw;
+    height: auto;
+    left: 50vw;
+    top: 20vh;
+    background-color: white;
+    transform: translateY(-25%);
+    padding: 1rem;
+    border: 1px solid silver;
+    box-shadow:  4px 4px 8px #0002;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 200ms ease-out;
+}    
+.modal.visivel {
+    opacity: 1;
+    transform: translate(-50%);
+}
+
+.modal>header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #0001;
+}
+
+.modal>.corpo-modal {
+    padding: 1em 0;
+}
+.modal>footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #0001;
+    padding-top: 0.75em;
+}
+
+span.fechar-modal{
+    background-color: #0001;
+    border-radius: 50%;
+    display: flex;
+    width: 1.25em;
+    height: 1.25em;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#mascara{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.visivel ~ #mascara {
+    opacity: 0.4;
+    pointer-events: initial;
+}
+
+div.dias_semana div p {
+    position: absolute;
+    float:initial;
+}
+
+div.dias_semana div input {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.btnAbrirModal {
+    width: 30%;
+    height: 30%;
+    position: relative;
+    float: right;
+    bottom: 30%;
+}
+
+.btnAbrirModal img {
+    float: inherit;
+    height: 100%;
+    
+}
+
+
+@media screen and (max-width: 458px) {
+    div.corpo div.dia p{
+        font-size: x-large;
+        
+    }
+
+    .margem {
+        font-size: x-large;
+    }
+}
+@media screen and (max-width: 1017px) {
+    ul.cabecario{
+        background-color: black;
+        padding-bottom: 70px;
+        
+    }
+    ul.cabecario li{
+        clear: both;
+        display: block;
+        
+    }
+    
+    ul.cabecario li a {
+        text-align: end;
+        margin-left: auto;
+        float: right;
+    
+    }
+
+    div.corpo {
+        clear: both;
+        display: block;
+        margin-top: 30vh;
+    }
+    div.corpo div h1 {
+       margin-top: 180px;
+       margin-bottom: 25px;
+       font-size: 50px;
+    }
+    div.corpo div.dia {
+        height: 50vh;
+        width: 93vw;
+        
+        
+    }
+}
+
+

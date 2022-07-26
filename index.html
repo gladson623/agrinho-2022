@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sla</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+
+
+</head>
+<style></style>
+
+<body class="cor">
+  <header class="cabecario">
+    <nav class="container_Nav">
+
+      <div>
+
+        <ul id="cabecario" class="cabecario">
+
+
+          <img src="imagens/logo.png">
+
+          <li><a href="index.html">inicio</a></li>
+
+          <script>
+            let usuario = JSON.parse(sessionStorage.getItem('usuario'))
+            const list = document.getElementById('cabecario');
+            if (usuario.isprofessor == 1) {
+              const el = document.createElement('li');
+              el.innerHTML = '<a href="alunos.html">Alunos('+usuario.usuario+')</a>';
+              list.appendChild(el);
+            } 
+        </script>
+
+          <li><a href="presenca.html">chamada</a></li>
+          <li><a href="mediaNotas.html">media de nota</a></li>
+          <li><a href="mediaPresenca.html">media de presença</a></li>
+
+
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <main>
+    <div class="corpo dias_semana">
+      <div>
+        <h1>materias da semana</h1>
+      </div>
+      <div class="dia" id="image-area">
+        <p>segunda-feira</p>
+        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="segunda" />
+        <div class="btnAbrirModal">
+          <img src="" id="segunda">
+        </div>
+      </div>
+      <div class="dia" id="image-area">
+        <p>terça-feira</p>
+        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="terca" />
+        <div class="btnAbrirModal">
+          <img src="" id="terca">
+        </div>
+      </div>
+      <div class="dia" id="image-area">
+        <p>quarta-feira</p>
+        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="quarta" />
+        <div class="btnAbrirModal">
+          <img src="" id="quarta">
+        </div>
+      </div>
+      <div class="dia" id="image-area">
+        <p>quinta-feira</p>
+        <!-- <button id="btn-modal">abre modal</button> -->
+        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="quinta" />
+        <div class="btnAbrirModal">
+          <img src="" id="quinta">
+        </div>
+      </div>
+      <div class="dia" id="image-area">
+        <p>sexta-feira</p>
+        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="sexta" />
+        <div class="btnAbrirModal">
+
+          <img src="" id="sexta" style="user-drag: none;
+          -webkit-user-drag: none;
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;">
+
+        </div>
+      </div>
+
+
+
+
+      <div class="modal">
+
+        <header>
+          <h2>cabecalho do modal</h2>
+          <span id="fechar-modal" class="fechar-modal">×</span>
+        </header>
+
+        <div class="corpo-modal">
+          <p>corpo do modal</p>
+        </div>
+
+      </div>
+      <div id="mascara"></div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <ul class="rodape">
+        <a href=""><img src="imagens/twiter.png" alt="" /></a>
+        <a href=""><img src="imagens/Instagram.png" alt="" /></a>
+        <a style="border-radius: 100%" href=""><img src="imagens/facebook.png" alt="" /></a>
+        <li>Feito por <strong>Gladson Coronado Dos Santos </strong>&copy;</li>
+        <li>Linguagens usadas: Html, CSS e JavaScript</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+<script src="js/javaScript.js"></script>
+
+</html>

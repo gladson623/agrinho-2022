@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sla</title>
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <script src="js/javaScript.js"></script>
+</head>
+
+<body class="cor">
+
+    <header class="cabecario">
+        <nav class="container_Nav">
+
+            <div>
+
+                <ul id="cabecario" class="cabecario">
+
+
+                    <img src="imagens/logo.png">
+
+                    <li><a href="index.html">inicio</a></li>
+                    <script>
+                        let usuario = JSON.parse(sessionStorage.getItem('usuario'))
+                        const list = document.getElementById('cabecario');
+                        if (usuario.isprofessor == 1) {
+                          const el = document.createElement('li');
+                          el.innerHTML = '<a href="alunos.html">Alunos('+usuario.usuario+')</a>';
+                          list.appendChild(el);
+                        } 
+                    </script>
+                    <li><a href="presenca.html">chamada</a></li>
+                    <li><a href="mediaNotas.html">media de nota</a></li>
+                    <li><a href="mediaPresenca.html">media de presença</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div class="corpo">
+            
+            <div class="div_columns2">
+                <p class="margem">calcular presença do aluno</p>
+
+                <div class="margem">
+                    <h6>Quantas aulas ele tem por dia?</h6> <input id="dia" type="number"> <br />
+                </div>
+                <div class="margem">
+                    <h6>quantos dias ele faltou?</h6> <input id="falta" type="number"> <br />
+                </div>
+               
+                <div class="margem btnAverage">
+                    <button onclick="presenca()">Calcular presença</button>
+                </div>
+
+            </div>
+            <img class="professoraC" id="professoraC" src="imagens/professoraCorrigindo.png" alt="">
+            <b class="media"></b>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <ul class="rodape">
+                <a href=""><img src="imagens/twiter.png" alt=""></a>
+                <a href=""><img src="imagens/Instagram.png" alt=""></a>
+                <a style="border-radius: 100%;" href=""><img src="imagens/facebook.png" alt=""></a>
+                <li>Feito por <strong>Gladson Coronado Dos Santos </strong>&copy;</li>
+                <li>Linguagens usadas: Html, CSS e JavaScript</li>
+
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
