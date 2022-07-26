@@ -125,6 +125,11 @@ function login() {
 
 }
 
+function deslogarUsuario(){
+    sessionStorage.clear;
+    window.location.href = "login.html";
+}
+
 function Init() {
     const form = document.getElementById('loginForm')
     form.addEventListener('submit', e => {

@@ -14,3 +14,14 @@ const usuarios = [
     {"id":13,"usuario": "aluno11", "senha": "456", "isprofessor": 0}           
     ];
  
+function islogado() {
+    let usuario = JSON.parse(sessionStorage.getItem('usuario'))
+    if (usuario == null || usuario.length < 1) {
+        window.location.href = "login.html";
+    }    
+}
+
+
+function Init() {
+    islogado()
+}
