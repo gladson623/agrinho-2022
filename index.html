@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sla</title>
   <link rel="stylesheet" href="css/estilo.css" />
-  <script src="js/usuarios.js"></script>
-
+  <script src="js/login.js"></script>
 
 </head>
 <style></style>
@@ -16,35 +15,17 @@
 <body onload="islogado()" class="cor">
   <header class="cabecario">
     <nav class="container_Nav">
-
       <div>
-
         <ul id="cabecario" class="cabecario">
-
-
           <img src="imagens/logo.png">
-
-          <li><a href="index.html">inicio</a></li>
-
-          <script>
-            let usuario = JSON.parse(sessionStorage.getItem('usuario'))
-            const list = document.getElementById('cabecario');
-            if (usuario.isprofessor == 1) {
-              const el = document.createElement('li');
-              el.innerHTML = '<a href="alunos.html">Alunos('+usuario.usuario+')</a>';
-              list.appendChild(el);
-            } 
-        </script>
-
-          <li><a href="presenca.html">chamada</a></li>
-          <li><a href="mediaNotas.html">media de nota</a></li>
-          <li><a href="mediaPresenca.html">media de presença</a></li>
-
-
-
+          <button class="deslogar" >
+            <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
+          </button>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="mediaNotas.html">Média de Nota</a></li>
+          <li><a href="mediaPresenca.html">Média de Presença</a></li>
         </ul>
       </div>
-
     </nav>
   </header>
   <main>
@@ -54,64 +35,50 @@
       </div>
       <div class="dia" id="image-area">
         <p>segunda-feira</p>
-        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="segunda" />
-        <div class="btnAbrirModal">
-          <img src="" id="segunda">
+        <input type="file" id="filesegunda" onchange="onSelectImage(event)" data-dia="segunda" />
+        <div class="btnAbrirModal" id="divsegunda">
+          <img src="" id="segunda" onclick="abreModal(this)">
         </div>
       </div>
       <div class="dia" id="image-area">
         <p>terça-feira</p>
-        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="terca" />
-        <div class="btnAbrirModal">
-          <img src="" id="terca">
+        <input type="file" id="fileterca" onchange="onSelectImage(event)" data-dia="terca" />
+        <div class="btnAbrirModal" id="divterca">
+          <img src="" id="terca" onclick="abreModal(this)">
         </div>
       </div>
       <div class="dia" id="image-area">
         <p>quarta-feira</p>
-        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="quarta" />
-        <div class="btnAbrirModal">
-          <img src="" id="quarta">
+        <input type="file" id="filequarta" onchange="onSelectImage(event)" data-dia="quarta" />
+        <div class="btnAbrirModal" id="divquarta">
+          <img src="" id="quarta" onclick="abreModal(this)">
         </div>
       </div>
       <div class="dia" id="image-area">
         <p>quinta-feira</p>
-        <!-- <button id="btn-modal">abre modal</button> -->
-        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="quinta" />
-        <div class="btnAbrirModal">
-          <img src="" id="quinta">
+        <input type="file" id="filequinta" onchange="onSelectImage(event)" data-dia="quinta" />
+        <div class="btnAbrirModal" id="divquinta">
+          <img src="" id="quinta" onclick="abreModal(this)">
         </div>
       </div>
       <div class="dia" id="image-area">
         <p>sexta-feira</p>
-        <input type="file" id="file_input" onchange="onSelectImage(event)" data-dia="sexta" />
-        <div class="btnAbrirModal">
-
-          <img src="" id="sexta" style="user-drag: none;
-          -webkit-user-drag: none;
-          user-select: none;
-          -moz-user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;">
-
+        <input type="file" id="filesexta" onchange="onSelectImage(event)" data-dia="sexta" />
+        <div class="btnAbrirModal" id="divsexta">
+          <img src="" id="sexta" onclick="abreModal(this)">
         </div>
       </div>
 
-
-
-
       <div class="modal">
-
         <header>
           <h2>cabecalho do modal</h2>
           <span id="fechar-modal" class="fechar-modal">×</span>
         </header>
 
         <div class="corpo-modal">
-          <p>corpo do modal</p>
         </div>
-
+        <div id="mascara"></div>
       </div>
-      <div id="mascara"></div>
     </div>
   </main>
   <footer>
@@ -126,6 +93,8 @@
     </div>
   </footer>
 </body>
+
+
 <script src="js/javaScript.js"></script>
 
 </html>

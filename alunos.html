@@ -7,59 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sla</title>
     <link rel="stylesheet" href="css/estilo.css">
-    <script src="js/usuarios.js"></script>
+    <script src="js/login.js"></script>
+    
 </head>
 
-<body onload="islogado()" class="cor">
+<body onload="islogado('alunos')" class="cor">
 
     <header class="cabecario">
         <nav class="container_Nav">
-
-            <div>
-
-                <ul id="cabecario" class="cabecario">
-
-                    <img src="imagens/logo.png"> 
-
-
-                    <li><a href="index.html">inicio</a></li>
-                    <script>
-                        let usuario = JSON.parse(sessionStorage.getItem('usuario'))
-                        const list = document.getElementById('cabecario');
-                        if (usuario.isprofessor == 1) {
-                          const el = document.createElement('li');
-                          el.innerHTML = '<a href="alunos.html">Alunos('+usuario.usuario+')</a>';
-                          list.appendChild(el);
-                        } 
-                    </script>
-                    <li><a href="presenca.html">chamada</a></li>
-                    <li><a href="mediaNotas.html">media de nota</a></li>
-                    <li><a href="mediaPresenca.html">media de presença</a></li>
-                </ul>
-            </div>
-
+          <div>
+            <ul id="cabecario" class="cabecario">
+              <img src="imagens/logo.png">
+              <button class="deslogar" >
+                <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
+              </button>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="mediaNotas.html">Média de Nota</a></li>
+              <li><a href="mediaPresenca.html">Média de Presença</a></li>
+            </ul>
+          </div>
         </nav>
-    </header>
+      </header>
     <main>
-        <div class="corpo">
-            <div>
-                <h1>materias da semana</h1>
-            </div>
-            <div class="dia">
-                <p>segunda-feira</p>
-            </div>
-            <div class="dia">
-                <p>terça-feira</p>
-            </div>
-            <div class="dia">
-                <p>quarta-feira</p>
-            </div>
-            <div class="dia">
-                <p>quinta-feira</p>
-            </div>
-            <div class="dia">
-                <p>sexta-feira</p>
-            </div>
+        <div id="corpo" class="corpo">
+            
         </div>
     </main>
     <footer>
@@ -75,5 +46,4 @@
         </div>
     </footer>
 </body>
-
 </html>

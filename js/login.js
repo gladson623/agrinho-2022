@@ -1,7 +1,3 @@
- //var usuarios = "../dados/usuarios.js";
-// var alunos = '../dados/alunos.js';
-// var professores = '../dados/professores.js';
-
 const usuarios = [
     {"id":1,"usuario": "professor1", "senha": "123", "isprofessor": 1}, 
     {"id":2,"usuario": "aluno1", "senha": "456", "isprofessor": 0},
@@ -38,39 +34,17 @@ const alunos = [
         ];
 
 const alunosnotas = [
-    {"id":1,"idaluno": 1, "trimestre":1,"nota":5.0}, 
-    {"id":2,"idaluno": 1, "trimestre":2,"nota":7.0}, 
-    {"id":3,"idaluno": 1, "trimestre":3,"nota":10.0}, 
-    {"id":4,"idaluno": 2, "trimestre":1,"nota":8.0}, 
-    {"id":5,"idaluno": 2, "trimestre":2,"nota":4.0}, 
-    {"id":6,"idaluno": 2, "trimestre":3,"nota":2.0}, 
-    {"id":7,"idaluno": 3, "trimestre":1,"nota":9.0}, 
-    {"id":8,"idaluno": 3, "trimestre":2,"nota":7.0}, 
-    {"id":9,"idaluno": 3, "trimestre":3,"nota":5.0}, 
-    {"id":10,"idaluno": 4, "trimestre":1,"nota":5.0}, 
-    {"id":11,"idaluno": 4, "trimestre":2,"nota":10.0}, 
-    {"id":12,"idaluno": 4, "trimestre":3,"nota":9.0}, 
-    {"id":13,"idaluno": 5, "trimestre":1,"nota":5.0}, 
-    {"id":14,"idaluno": 5, "trimestre":2,"nota":8.0}, 
-    {"id":15,"idaluno": 5, "trimestre":3,"nota":10.0}, 
-    {"id":16,"idaluno": 6, "trimestre":1,"nota":3.0}, 
-    {"id":17,"idaluno": 6, "trimestre":2,"nota":7.0}, 
-    {"id":18,"idaluno": 6, "trimestre":3,"nota":4.0}, 
-    {"id":19,"idaluno": 7, "trimestre":1,"nota":5.0}, 
-    {"id":20,"idaluno": 7, "trimestre":2,"nota":7.0}, 
-    {"id":21,"idaluno": 7, "trimestre":3,"nota":8.0}, 
-    {"id":22,"idaluno": 8, "trimestre":1,"nota":9.0}, 
-    {"id":23,"idaluno": 8, "trimestre":2,"nota":7.0}, 
-    {"id":24,"idaluno": 8, "trimestre":3,"nota":10.0}, 
-    {"id":25,"idaluno": 9, "trimestre":1,"nota":10.0}, 
-    {"id":26,"idaluno": 9, "trimestre":2,"nota":3.0}, 
-    {"id":27,"idaluno": 9, "trimestre":3,"nota":10.0}, 
-    {"id":28,"idaluno": 10, "trimestre":1,"nota":9.0}, 
-    {"id":29,"idaluno": 10, "trimestre":2,"nota":7.0}, 
-    {"id":30,"idaluno": 10, "trimestre":3,"nota":4.0}, 
-    {"id":31,"idaluno": 11, "trimestre":1,"nota":10.0}, 
-    {"id":32,"idaluno": 11, "trimestre":2,"nota":10.0}, 
-    {"id":33,"idaluno": 11, "trimestre":3,"nota":10.0}
+    {"id":1,"idaluno": 1, "nota1":10.0,"nota2":10.0,"nota3":9.0}, 
+    {"id":2,"idaluno": 2, "nota1":8.0,"nota2":9.0,"nota3":4.0},
+    {"id":3,"idaluno": 3, "nota1":3.0,"nota2":8.0,"nota3":7.0},
+    {"id":4,"idaluno": 4, "nota1":4.0,"nota2":7.0,"nota3":2.0}, 
+    {"id":5,"idaluno": 5, "nota1":5.0,"nota2":6.0,"nota3":9.0}, 
+    {"id":6,"idaluno": 6, "nota1":6.0,"nota2":6.0,"nota3":6.0}, 
+    {"id":7,"idaluno": 7, "nota1":7.0,"nota2":5.0,"nota3":7.0}, 
+    {"id":8,"idaluno": 8, "nota1":8.0,"nota2":4.0,"nota3":8.0}, 
+    {"id":8,"idaluno": 9, "nota1":8.0,"nota2":8.0,"nota3":9.0}, 
+    {"id":10,"idaluno": 10, "nota1":10.0,"nota2":2.0,"nota3":5.0}, 
+    {"id":11,"idaluno": 11, "nota1":5.0,"nota2":1.0,"nota3":5.0}
 ];        
 
 function login() {
@@ -80,6 +54,14 @@ function login() {
     let usuarioFiltrado = usuarios.filter((item) => {
         return item.usuario == usuario && item.senha == senha
     })
+
+    if(usuarioFiltrado == null || usuarioFiltrado.length < 1) {
+        document.getElementById('mensagemErro').innerHTML = '<p class="paragrafoTentar">Usuário e/ou Senha Inválido(s)</p>'
+        // setTimeout(function() {
+        //     $('#mensagemErro').fadeOut('fast');
+        //  }, 2000);
+          return
+    } 
 
     let professorFiltrado = professores.filter((item) => {
         return item.idusuario == usuarioFiltrado[0].id
@@ -107,28 +89,93 @@ function login() {
         })) 
     }) 
 
+    clearSession();
+    sessionStorage.setItem('usuario' , JSON.stringify(usuarioFiltrado[0])); 
+    sessionStorage.setItem('professor' , JSON.stringify(professorFiltrado[0])); 
+    sessionStorage.setItem('alunos' , JSON.stringify(alunosFiltrado)); 
+    sessionStorage.setItem('alunosnotas' , JSON.stringify(alunosNotasFiltrado));
+    window.location.href = "index.html";
 
-    
-    if(usuarioFiltrado.length > 0) {
-        sessionStorage.clear;
-        sessionStorage.setItem('usuario' , JSON.stringify(usuarioFiltrado[0])); 
-        sessionStorage.setItem('professor' , JSON.stringify(professorFiltrado[0])); 
-        sessionStorage.setItem('alunos' , JSON.stringify(alunosFiltrado)); 
-        sessionStorage.setItem('alunosnotas' , JSON.stringify(alunosNotasFiltrado));
-        window.location.href = "index.html";
-    } else {
-        document.getElementById('mensagemErro').innerHTML = '<p class="paragrafoTentar">usuario e/ou senha incorreta</p>'
-        setTimeout(function() {
-            $('#mensagemErro').fadeOut('fast');
-         }, 2000);
+}
+
+function islogado(type="") {
+    let usuario = JSON.parse(sessionStorage.getItem('usuario'))
+    const list = document.getElementById('cabecario');
+    if (usuario == null || usuario.length < 1) {
+        window.location.href = "login.html";
+    }
+    if (usuario.isprofessor == 1) {
+        const el = document.createElement('li');
+        el.innerHTML = '<a href="alunos.html">Alunos(' + usuario.usuario + ')</a>';
+        list.appendChild(el);
+    }
+    if (type=="alunos") {
+        listaAlunos()
     }
 
 }
 
-function deslogarUsuario(){
+function clearSession() {
+    sessionStorage.removeItem('alunosnotas');
+    sessionStorage.removeItem('alunos');
+    sessionStorage.removeItem('professor');
+    sessionStorage.removeItem('usuario');
     sessionStorage.clear;
+} 
+
+function deslogarUsuario(redirecionar=true){
+    
+    clearSession();
     window.location.href = "login.html";
+   
 }
+ 
+function criarTabela(conteudo) {
+    var tabela = document.createElement("table");
+    var thead = document.createElement("thead");
+    var tbody=document.createElement("tbody");
+    var thd=function(i){return (i==0)?"th":"td";};
+    for (var i=0;i<conteudo.length;i++) {
+      var tr = document.createElement("tr");
+      for(var o=0;o<conteudo[i].length;o++){
+        var t = document.createElement(thd(i));
+        var texto=document.createTextNode(conteudo[i][o]);
+        t.appendChild(texto);
+        tr.appendChild(t);
+      }
+      (i==0)?thead.appendChild(tr):tbody.appendChild(tr);
+    }
+    tabela.appendChild(thead);
+    tabela.appendChild(tbody);
+    return tabela;
+  }
+
+  function listaAlunos(){
+    let alunosnotas = JSON.parse(sessionStorage.getItem('alunosnotas'));
+    let alunos = JSON.parse(sessionStorage.getItem('alunos'));
+    let arr = []
+    arr.push(["Id","Aluno","1Trim","2Trim","3Trim","Média"])
+
+    //console.log(alunos)
+
+    alunosnotas.forEach((nota) => {
+        let alunoFiltrado = alunos.filter((item) => {
+            return item.id == nota.idaluno
+        }) 
+        console.log(alunoFiltrado) 
+       arr.push([nota.idaluno, alunoFiltrado[0].aluno,nota.nota1,nota.nota2,nota.nota3, ((nota.nota1+nota.nota2+nota.nota3)/3).toFixed(2)])
+    }) 
+
+     
+
+ console.log(arr)
+    //let alunosNotasFiltrado = alunosNotasFiltrado.concat(
+    document.getElementById("corpo").appendChild(criarTabela(
+        arr
+      ));
+  }
+
+  
 
 function Init() {
     const form = document.getElementById('loginForm')

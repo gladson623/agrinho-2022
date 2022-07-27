@@ -1,3 +1,5 @@
+var imagem = '';
+
 function media() {
 
     var nota1 = document.getElementById("nota1").value;
@@ -91,7 +93,10 @@ function presenca() {
 }
 
 function onSelectImage(event) {
-	
+	imagem = 'a';
+    console.log(event.target.files);
+    console.log(event.target.files[0].name)
+
 	if (!event.target.files.length) return;
 
     var ajuste = event.path[1]
@@ -100,22 +105,31 @@ function onSelectImage(event) {
 	
 	var reader = new FileReader();
 
-
 	reader.onload = function(event) {
 		ajuste.style.background = "url('" + event.target.result + "') no-repeat 0 0";
         ajuste.style.backgroundSize = 'cover';
         ajuste.style.backgroundPosition = 'center';
-        sumir.style.display = 'none';
 	};
 
 	reader.readAsDataURL(selectedFile);
 
-    inserirBotaoModal(event)
+    inserirBotaoModal(event);
 }
 
-function inserirBotaoModal(event) {
+function inserirBotaoModal (event) {
     document.querySelector(`#${event.target.dataset.dia}`).setAttribute('src', 'imagens/expandir.png');
+    document.querySelector(`#div${event.target.dataset.dia}`).style.zIndex = '1';
+}
 
+function inserirImagemModal(element) {
+    console.log(imagem);
+    document.querySelector('.corpo-modal').insertAdjacentElement('afterbegin', document.createElement('img'));
+    document.querySelector('.corpo-modal').children[0].classList.add('imagemModal');
+    let src = element.src.substring(element.src.indexOf('/imagens/') + 1);
+    // event.target.files
+    document.querySelector(`#file${element.id}`).setAttribute('src', )
+    // document.querySelector('.imagemModal').setAttribute('src', src);
+    
 }
 
 const botaoEl = document.getElementById('sexta');
@@ -124,6 +138,7 @@ botaoEl.addEventListener('click', abreModal);
 function abreModal(e){
     const modalEl = document.querySelector('.modal')
     modalEl.classList.add('visivel')
+    inserirImagemModal(e);
 }
 
 const botoesDeFechar = document.getElementById('fechar-modal')

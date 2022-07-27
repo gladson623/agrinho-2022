@@ -116,7 +116,7 @@ nav ul img {
 
 .modal {
     position: fixed;
-    z-index: 10;
+    z-index: -1;
     width: 50vw;
     height: auto;
     left: 50vw;
@@ -131,8 +131,9 @@ nav ul img {
     transition: all 200ms ease-out;
 }    
 .modal.visivel {
-    opacity: 1;
+    opacity: 10;
     transform: translate(-50%);
+    z-index: 1;
 }
 
 .modal>header {
@@ -197,12 +198,30 @@ div.dias_semana div input {
     position: relative;
     float: right;
     bottom: 30%;
+    z-index: -1;
 }
 
 .btnAbrirModal img {
     float: inherit;
     height: 100%;
     
+}
+
+.deslogar{
+    background-color: transparent;
+    border: 0px;
+    border-radius: 40%;
+    width: 30px;
+    height: 30px;
+    margin-top: 1%;
+   float: left;
+}
+.deslogar img{
+    background-color: red;
+    border-radius: 40%;
+    width: 30px;
+    height: 30px;
+
 }
 
 
