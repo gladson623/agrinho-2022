@@ -93,27 +93,40 @@ function presenca() {
 }
 
 function onSelectImage(event) {
-	imagem = 'a';
+	//imagem = 'a';
     console.log(event.target.files);
-    console.log(event.target.files[0].name)
-
+    //console.log(event.target.files[0].name)
+    
 	if (!event.target.files.length) return;
 
     var ajuste = event.path[1]
 	var selectedFile = event.target.files[0];
-    var sumir = document.querySelector('.sumir');
+    //var sumir = document.querySelector('.sumir');
 	
 	var reader = new FileReader();
 
-	reader.onload = function(event) {
-		ajuste.style.background = "url('" + event.target.result + "') no-repeat 0 0";
+	reader.onload = function(e) {
+		ajuste.style.background = "url('" + e.target.result + "') no-repeat 0 0";
         ajuste.style.backgroundSize = 'cover';
         ajuste.style.backgroundPosition = 'center';
+        saveImagem(event, e.target.result)
 	};
 
 	reader.readAsDataURL(selectedFile);
-
     inserirBotaoModal(event);
+}
+
+function saveImagem(event, img_base64String) {
+    let professor = JSON.parse(sessionStorage.getItem('professor'));
+    let key =  event.target.id+'_'+professor.professor ;
+    localStorage.setItem(key, img_base64String);
+}
+
+function getImagem(key) {
+    console.log("getImagem")
+    let professor = JSON.parse(sessionStorage.getItem('professor'));
+    key =  key+'_'+professor.professor ; 
+    return localStorage.getItem(key);
 }
 
 function inserirBotaoModal (event) {
