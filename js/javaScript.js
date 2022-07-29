@@ -22,9 +22,7 @@ function media() {
     nota2 = parseFloat(nota2);
     nota3 = parseFloat(nota3);
 
-    console.log(nota1)
-    console.log(nota2)
-    console.log(nota3)
+    
 
     var media = parseInt((nota1 + nota2 + nota3) / 3)
 
@@ -45,6 +43,7 @@ function media() {
 function moveImage(media) {
     let image = document.querySelector('.professoraC');
     let bold = document.querySelector('.media');
+    let quadro = document.querySelector('.quadro');
     let btnAverage = document.querySelector('.btnAverage');
 
 
@@ -54,11 +53,13 @@ function moveImage(media) {
 
     bold.innerHTML = media;
     bold.style.color = 'red';
-    bold.style.position = 'relative';
-    bold.style.bottom = '30vh';
-    bold.style.right = '12vw';
+    // bold.style.position = 'relative';
+    // bold.style.bottom = '350px';
+    // bold.style.right = '25';
     bold.style.fontSize = '50px'
     bold.style.userSelect = 'none';
+    
+    quadro.style.textAlign = 'center'
 
     btnAverage.style.margin = '0'
 }
@@ -68,13 +69,13 @@ function presenca() {
     var dia = document.getElementById("dia").value;
     var falta = document.getElementById("falta").value;
 
-    if (dia == '') {
-        dia = 0;
+    if (dia == '' || dia == "NaN" || dia == 0) {
+        dia = 1;
     } 
-    if (falta == '') {
+    if (falta == '' || falta == "NaN") {
         falta = 0;
     } 
-
+    //console.log(dia)
     
     dia = parseFloat(dia);
     falta = parseFloat(falta);
@@ -83,10 +84,11 @@ function presenca() {
     
 
     var totalPresenca = parseInt((dia * 200))
+    //console.log(totalPresenca)
     var quantidadeFalta = parseInt((totalPresenca / 100) * 25)
     var quantidadeDiaFalta = parseInt((quantidadeFalta / dia - falta))
     var quantidadeAulasFalta = parseInt(((quantidadeFalta / dia - falta) * dia))
-    console.log(quantidadeAulasFalta)
+    
 
     alert("voce ainda pode faltar " + quantidadeDiaFalta + " dias ou " + quantidadeAulasFalta + " aula");
 
@@ -94,7 +96,7 @@ function presenca() {
 
 function onSelectImage(event) {
 	//imagem = 'a';
-    console.log(event.target.files);
+    //console.log(event.target.files);
     //console.log(event.target.files[0].name)
     
 	if (!event.target.files.length) return;
@@ -110,6 +112,7 @@ function onSelectImage(event) {
         ajuste.style.backgroundSize = 'cover';
         ajuste.style.backgroundPosition = 'center';
         saveImagem(event, e.target.result)
+
 	};
 
 	reader.readAsDataURL(selectedFile);
@@ -117,13 +120,15 @@ function onSelectImage(event) {
 }
 
 function saveImagem(event, img_base64String) {
+    
     let professor = JSON.parse(sessionStorage.getItem('professor'));
     let key =  event.target.id+'_'+professor.professor ;
+    
     localStorage.setItem(key, img_base64String);
 }
 
+
 function getImagem(key) {
-    console.log("getImagem")
     let professor = JSON.parse(sessionStorage.getItem('professor'));
     key =  key+'_'+professor.professor ; 
     return localStorage.getItem(key);
@@ -134,31 +139,20 @@ function inserirBotaoModal (event) {
     document.querySelector(`#div${event.target.dataset.dia}`).style.zIndex = '1';
 }
 
-function inserirImagemModal(element) {
-    console.log(imagem);
-    document.querySelector('.corpo-modal').insertAdjacentElement('afterbegin', document.createElement('img'));
-    document.querySelector('.corpo-modal').children[0].classList.add('imagemModal');
-    let src = element.src.substring(element.src.indexOf('/imagens/') + 1);
-    // event.target.files
-    document.querySelector(`#file${element.id}`).setAttribute('src', )
-    // document.querySelector('.imagemModal').setAttribute('src', src);
-    
-}
 
-const botaoEl = document.getElementById('sexta');
-botaoEl.addEventListener('click', abreModal);
+
+
 
 function abreModal(e){
     const modalEl = document.querySelector('.modal')
     modalEl.classList.add('visivel')
-    inserirImagemModal(e);
 }
 
 const botoesDeFechar = document.getElementById('fechar-modal')
 botoesDeFechar.addEventListener('click', fechaModal);
 
 function fechaModal(e) {
-    console.log("oi")
+    
     const modalEl = document.querySelector('.modal')
     modalEl.classList.remove('visivel')
 }

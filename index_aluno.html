@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio</title>
+  <title>Aluno</title>
   <link rel="stylesheet" href="css/estilo.css" />
   <link rel="shortcut icon" href="imagens/favicon.png">
   <script src="js/login.js"></script>
@@ -13,11 +13,9 @@
 </head>
 <style></style>
 
-<body onload="index()" >
-
-  
+<body onload="islogado()" >
   <header class="cabecario">
-    <nav class="container_Nav" >
+    <nav class="container_Nav">
       <div>
         <ul id="cabecario" class="cabecario">
           <img src="imagens/logo.png">
@@ -31,57 +29,50 @@
       </div>
     </nav>
   </header>
-  <main>
-    <div class="corpo dias_semana">
+  <main id="dias">
+    <div class="corpo dias_semana" id="corpo dias_semana">
       <div>
         <h1>Materias da Semana</h1>
       </div>
-      <div class="dia" id="image-area">
+
+      <div class="dia" id="image-area1" style="display: none;">
         <p>Segunda-Feira</p>
-        <input type="file" id="filesegunda" onchange="onSelectImage(event)" data-dia="segunda" />
+        <input type="image" id="filesegunda" data-dia="segunda" />
         <div class="btnAbrirModal" id="divsegunda">
           <img src="" id="segunda" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area">
+      
+      <div class="dia" id="image-area2" style="display: none;">
         <p>Terça-Feira</p>
-        <input type="file" id="fileterca" onchange="onSelectImage(event)" data-dia="terca" />
+        <input type="image" id="fileterca"  data-dia="terca" />
         <div class="btnAbrirModal" id="divterca">
           <img src="" id="terca" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area">
+      <div class="dia" id="image-area3" style="display: none;">
         <p>Quarta-Feira</p>
-        <input type="file" id="filequarta" onchange="onSelectImage(event)" data-dia="quarta" />
+        <input type="image" id="filequarta"  data-dia="quarta" />
         <div class="btnAbrirModal" id="divquarta">
           <img src="" id="quarta" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area">
+      <div class="dia" id="image-area4" style="display: none;">
         <p>Quinta-Feira</p>
-        <input type="file" id="filequinta" onchange="onSelectImage(event)" data-dia="quinta" />
+        <input type="image" id="filequinta"  data-dia="quinta" />
         <div class="btnAbrirModal" id="divquinta">
           <img src="" id="quinta" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area">
+      <div class="dia" id="image-area5" style="display: none;">
         <p>Sexta-Feira</p>
-        <input type="file" id="filesexta" onchange="onSelectImage(event)" data-dia="sexta" />
+        <input type="image" id="filesexta"  data-dia="sexta" />
         <div class="btnAbrirModal" id="divsexta">
           <img src="" id="sexta" onclick="abreModal(this)">
         </div>
       </div>
 
-      <div class="modal">
-        <header>
-          <h2>cabecalho do modal</h2>
-          <span id="fechar-modal" class="fechar-modal">×</span>
-        </header>
-
-        <div class="corpo-modal">
-        </div>
-        <div id="mascara"></div>
-      </div>
+      
     </div>
   </main>
   <footer>

@@ -5,50 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sla</title>
+    <title>Presença</title>
+    <link rel="shortcut icon" href="imagens/favicon.png">
     <link rel="stylesheet" href="css/estilo.css">
     <script src="js/login.js"></script>
 
-    
+
 </head>
 
-<body onload="islogado()"  class="cor">
+<body onload="islogado()" class="cor">
 
     <header class="cabecario">
         <nav class="container_Nav">
-          <div>
-            <ul id="cabecario" class="cabecario">
-              <img src="imagens/logo.png">
-              <button class="deslogar" >
-                <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
-              </button>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="mediaNotas.html">Média de Nota</a></li>
-              <li><a href="mediaPresenca.html">Média de Presença</a></li>
-            </ul>
-          </div>
+            <div>
+                <ul id="cabecario" class="cabecario">
+                    <img src="imagens/logo.png">
+                    <button class="deslogar">
+                        <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
+                    </button>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mediaNotas.html">Média de Nota</a></li>
+                    <li><a href="mediaPresenca.html" class="pagina_atual">Média de Presença</a></li>
+                </ul>
+            </div>
         </nav>
-      </header>
+    </header>
     <main>
         <div class="corpo">
-            
+
             <div class="div_columns2">
                 <p class="margem">calcular presença do aluno</p>
 
                 <div class="margem">
-                    <h6>Quantas aulas ele tem por dia?</h6> <input class="inpTexto" id="dia" type="number"> <br />
+                    <h6>Quantas aulas ele tem por dia?</h6> <input class="inpTexto" id="dia" type="number" min="0" max="1000" value="1"> <br />
                 </div>
                 <div class="margem">
-                    <h6>quantos dias ele faltou?</h6> <input class="inpTexto" id="falta" type="number"> <br />
+                    <h6>quantos dias ele faltou?</h6> <input class="inpTexto" id="falta" type="number" min="0" max="1000" value="0"> <br />
                 </div>
-               
+
                 <div class="margem btnAverage">
                     <button onclick="presenca()">Calcular presença</button>
                 </div>
-
+                <img src="imagens/saiba-mais.png" onclick="abreModal()" height="100px" width="150px" alt="saiba-mais">
             </div>
-            <img class="professoraC" id="professoraC" src="imagens/professoraCorrigindo.png" alt="">
-            <b class="media"></b>
+            <div class="quadro">
+                <img class="professoraC" id="professoraC" src="imagens/professoraCorrigindo.png" alt="">
+                <div class="media"></div>
+            </div>
+
+
+
+
+            <div class="modal">
+                <header>
+                    <h2>cabecalho do modal</h2>
+                    <span id="fechar-modal" class="fechar-modal">×</span>
+                </header>
+
+                <div class="corpo-modal">
+                    <p>os alunos da minha escola costumam faltar muito, e por motivos como este suas notas na prova
+                        parana foram muito menores que o esperado, e para resolver este problema eu fiz a pagina inicio.
+                        agora sempre os alunos ou os professores poderam calcular a presenca de seus alunos de forma
+                        muito mais facil.</p>
+
+                </div>
+                <div id="mascara"></div>
+            </div>
         </div>
     </main>
     <footer>
@@ -65,4 +87,5 @@
     </footer>
 </body>
 <script src="js/javaScript.js"></script>
+
 </html>

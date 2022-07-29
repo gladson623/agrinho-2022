@@ -5,29 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sla</title>
+    <title>Notas</title>
+    <link rel="shortcut icon" href="imagens/favicon.png">
     <link rel="stylesheet" href="css/estilo.css">
     <script src="js/login.js"></script>
-    
+
 </head>
 
 <body onload="islogado()" class="cor">
 
     <header class="cabecario">
         <nav class="container_Nav">
-          <div>
-            <ul id="cabecario" class="cabecario">
-              <img src="imagens/logo.png">
-              <button class="deslogar" >
-                <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
-              </button>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="mediaNotas.html">Média de Nota</a></li>
-              <li><a href="mediaPresenca.html">Média de Presença</a></li>
-            </ul>
-          </div>
+            <div>
+                <ul id="cabecario" class="cabecario">
+                    <img src="imagens/logo.png">
+                    <button class="deslogar">
+                        <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
+                    </button>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mediaNotas.html" class="pagina_atual">Média de Nota</a></li>
+                    <li><a href="mediaPresenca.html">Média de Presença</a></li>
+                </ul>
+            </div>
         </nav>
-      </header>
+    </header>
     <main>
         <div class="corpo cardNotas">
             <div class="">
@@ -46,10 +47,25 @@
                     <button onclick="media()">Calcular Média</button>
                 </div>
 
+                <img src="imagens/saiba-mais.png" onclick="abreModal()" height="100px" width="150px" alt="saiba-mais">
             </div>
-            
-            <img class="professoraC" id="professoraC" src="imagens/professoraCorrigindo.png" alt="">
-            <b class="media"></b>
+            <div class="quadro">
+                <img class="professoraC" id="professoraC" src="imagens/professoraCorrigindo.png" alt="">
+                <b class="media"></b>
+            </div>
+            <div class="modal">
+                <header>
+                    <h2>cabecalho do modal</h2>
+                    <span id="fechar-modal" class="fechar-modal">×</span>
+                </header>
+
+                <div class="corpo-modal">
+                    <p>com esta pagina os alunos e os professores podem calcular a media de notas de modo mais facil e
+                        rapido, economizando tempo e os insentivando a melhorarem</p>
+
+                </div>
+                <div id="mascara"></div>
+            </div>
         </div>
     </main>
     <footer>
@@ -66,4 +82,5 @@
     </footer>
 </body>
 <script src="js/javaScript.js"></script>
+
 </html>
