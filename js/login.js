@@ -178,7 +178,7 @@ function islogado(type="") {
             img3.style.maxHeight = '100%'
             
             d3.className = 'dia'
-            d3.id = 'image-area2'
+            d3.id = 'image-area3'
             d3.innerHTML = '<p class="dia_semana">Terca-Feira</p>'
             d3.appendChild(img3)
             doc.append(d3)
@@ -200,7 +200,7 @@ function islogado(type="") {
             img4.style.maxHeight = '100%'
 
             d4.className = 'dia'
-            d4.id = 'image-area2'
+            d4.id = 'image-area4'
             d4.innerHTML = '<p class="dia_semana">Quarta-Feira</p>'
             d4.appendChild(img4)
             doc.append(d4)
@@ -222,7 +222,7 @@ function islogado(type="") {
             img5.style.maxHeight = '100%'
             
             d5.className = 'dia'
-            d5.id = 'image-area2'
+            d5.id = 'image-area5'
             d5.innerHTML = '<p class="dia_semana">Quinta-Feira</p>'
             d5.appendChild(img5)
             doc.append(d5)
@@ -243,7 +243,7 @@ function islogado(type="") {
             img6.style.maxHeight = '100%'
 
             d6.className = 'dia'
-            d6.id = 'image-area2'
+            d6.id = 'image-area6'
             d6.innerHTML = '<p class="dia_semana">Sexta-Feira</p>'
             d6.appendChild(img6)
             doc.append(d6)

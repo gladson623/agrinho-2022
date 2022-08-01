@@ -109,14 +109,14 @@ function saveImagem(event, img_base64String) {
     let professor = JSON.parse(sessionStorage.getItem('professor'));
     let key =  event.target.id+'_'+professor.professor ;
     
-    localStorage.setItem(key, img_base64String);
+    sessionStorage.setItem(key, img_base64String);
 }
 
 
 function getImagem(key) {
     let professor = JSON.parse(sessionStorage.getItem('professor'));
     key =  key+'_'+professor.professor ; 
-    return localStorage.getItem(key);
+    return sessionStorage.getItem(key);
 }
 
 function inserirBotaoModal (event) {
