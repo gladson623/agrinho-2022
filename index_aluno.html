@@ -11,9 +11,10 @@
   <script src="js/login.js"></script>
 
 </head>
-<style></style>
+
 
 <body onload="islogado()" >
+  <div id="preloader"></div>
   <header class="cabecario">
     <nav class="container_Nav">
       <div>
@@ -35,7 +36,7 @@
         <h1>Materias da Semana</h1>
       </div>
 
-      <div class="dia" id="image-area1" style="display: none;">
+      <div class="dia" id="image-area1" >
         <p>Segunda-Feira</p>
         <input type="image" id="filesegunda" data-dia="segunda" />
         <div class="btnAbrirModal" id="divsegunda">
@@ -43,28 +44,28 @@
         </div>
       </div>
       
-      <div class="dia" id="image-area2" style="display: none;">
+      <div class="dia aluno" id="image-area2" >
         <p>Terça-Feira</p>
         <input type="image" id="fileterca"  data-dia="terca" />
         <div class="btnAbrirModal" id="divterca">
           <img src="" id="terca" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area3" style="display: none;">
+      <div class="dia aluno" id="image-area3" >
         <p>Quarta-Feira</p>
         <input type="image" id="filequarta"  data-dia="quarta" />
         <div class="btnAbrirModal" id="divquarta">
           <img src="" id="quarta" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area4" style="display: none;">
+      <div class="dia aluno" id="image-area4" >
         <p>Quinta-Feira</p>
         <input type="image" id="filequinta"  data-dia="quinta" />
         <div class="btnAbrirModal" id="divquinta">
           <img src="" id="quinta" onclick="abreModal(this)">
         </div>
       </div>
-      <div class="dia" id="image-area5" style="display: none;">
+      <div class="dia aluno" id="image-area5" >
         <p>Sexta-Feira</p>
         <input type="image" id="filesexta"  data-dia="sexta" />
         <div class="btnAbrirModal" id="divsexta">
@@ -77,14 +78,23 @@
   </main>
   <footer>
     <div>
-      <ul class="rodape">
+      <div  class="rodape">
+      <ul>
+        
         <a href=""><img src="imagens/twiter.png" alt="" /></a>
         <a href=""><img src="imagens/Instagram.png" alt="" /></a>
-        <a style="border-radius: 100%" href=""><img src="imagens/facebook.png" alt="" /></a>
+        <a href=""><img src="imagens/facebook.png" alt="" /></a>
         <li>Feito por <strong>Gladson Coronado Dos Santos </strong>&copy;</li>
         <li>Linguagens usadas: Html, CSS e JavaScript</li>
       </ul>
+      <div class="divisoria"></div>
+      <ul>
+        <li>formas de contato:</li> 
+        <li><a href="mailto:gladsoncoronado@gmail.com"><img class="contatos" src="imagens/email.png" alt="">gladsoncoronado@gmail.com</a></li>
+        
+      </ul>
     </div>
+  </div>
   </footer>
 </body>
 

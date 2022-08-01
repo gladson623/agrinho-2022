@@ -14,7 +14,7 @@
 </head>
 
 <body onload="islogado()" class="cor">
-
+    <div id="preloader"></div>
     <header class="cabecario">
         <nav class="container_Nav">
             <div>
@@ -34,7 +34,7 @@
         <div class="corpo">
 
             <div class="div_columns2">
-                <p class="margem">calcular presença do aluno</p>
+                <p class="margem">Calcular Presença do Aluno</p>
 
                 <div class="margem">
                     <h6>Quantas aulas ele tem por dia?</h6> <input class="inpTexto" id="dia" type="number" min="0" max="1000" value="1"> <br />
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="margem btnAverage">
-                    <button onclick="presenca()">Calcular presença</button>
+                    <button onclick="presenca()">Calcular Presença</button>
                 </div>
                 <img src="imagens/saiba-mais.png" onclick="abreModal()" height="100px" width="150px" alt="saiba-mais">
             </div>
@@ -56,16 +56,16 @@
 
 
 
-            <div class="modal">
+            <div class="modal" >
                 <header>
-                    <h2>cabecalho do modal</h2>
+                    <h2>Presença Média</h2>
                     <span id="fechar-modal" class="fechar-modal">×</span>
                 </header>
 
                 <div class="corpo-modal">
-                    <p>os alunos da minha escola costumam faltar muito, e por motivos como este suas notas na prova
-                        parana foram muito menores que o esperado, e para resolver este problema eu fiz a pagina inicio.
-                        agora sempre os alunos ou os professores poderam calcular a presenca de seus alunos de forma
+                    <p>Os alunos da minha escola costumam faltar muito, e por motivos como este suas notas na prova
+                        parana foram muito menores que o esperado, e para resolver este problema eu fiz a pagina Média de Nota.
+                        Agora sempre os alunos ou os professores poderam calcular a presenca de seus alunos de forma
                         muito mais facil.</p>
 
                 </div>
@@ -78,9 +78,10 @@
             <ul class="rodape">
                 <a href=""><img src="imagens/twiter.png" alt=""></a>
                 <a href=""><img src="imagens/Instagram.png" alt=""></a>
-                <a style="border-radius: 100%;" href=""><img src="imagens/facebook.png" alt=""></a>
+                <a  href=""><img src="imagens/facebook.png" alt=""></a>
                 <li>Feito por <strong>Gladson Coronado Dos Santos </strong>&copy;</li>
-                <li>Linguagens usadas: Html, CSS e JavaScript</li>
+                
+                <li>Linguagens Usadas: Html, CSS e JavaScript</li>
 
             </ul>
         </div>

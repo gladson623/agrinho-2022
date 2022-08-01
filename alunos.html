@@ -2,50 +2,54 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alunos</title>
-    <link rel="shortcut icon" href="imagens/favicon.png">
-    <link rel="stylesheet" href="css/estilo.css">
-    <script src="js/login.js"></script>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos</title>
+  <link rel="shortcut icon" href="imagens/favicon.png">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/login.js"></script>
+
 </head>
 
 <body onload="islogado('alunos')" class="cor">
+  <div id="preloader"></div>
 
-    <header class="cabecario">
-        <nav class="container_Nav">
-          <div>
-            <ul id="cabecario" class="cabecario">
-              <img src="imagens/logo.png">
-              <button class="deslogar" >
-                <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
-              </button>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="mediaNotas.html">Média de Nota</a></li>
-              <li><a href="mediaPresenca.html">Média de Presença</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    <main>
-        <div id="corpo" class="corpo">
-          <div>
-            <h1 class="titulo">Lista de Alunos</h1>
-          </div>
-        </div>
-    </main>
-    <footer>
-        <div>
-            <ul class="rodape">
-                <a href=""><img src="imagens/twiter.png" alt=""></a>
-                <a href=""><img src="imagens/Instagram.png" alt=""></a>
-                <a style="border-radius: 100%;" href=""><img src="imagens/facebook.png" alt=""></a>
-                <li>Feito por <strong>Gladson Coronado Dos Santos </strong>&copy;</li>
-                <li>Linguagens usadas: Html, CSS e JavaScript</li>
-            </ul>
-        </div>
-    </footer>
+  <header class="cabecario">
+    <nav class="container_Nav">
+      <div>
+        <ul id="cabecario" class="cabecario">
+          <img src="imagens/logo.png">
+          <button class="deslogar">
+            <img src="imagens/sair.png" alt="sair da conta" onclick="deslogarUsuario()">
+          </button>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="mediaNotas.html">Média de Nota</a></li>
+          <li><a href="mediaPresenca.html">Média de Presença</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div id="corpo" class="corpo">
+      <div>
+        <h1 class="titulo">Lista de Alunos</h1>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <ul class="rodape">
+        <a href=""><img src="imagens/twiter.png" alt=""></a>
+        <a href=""><img src="imagens/Instagram.png" alt=""></a>
+        <a href=""><img src="imagens/facebook.png" alt=""></a>
+        <li>Feito por <strong>Gladson Coronado Dos Santos </strong>&copy;</li>
+        <li>Linguagens usadas: Html, CSS e JavaScript</li>
+      </ul>
+    </div>
+  </footer>
 </body>
+
+<script src="js/javaScript.js"></script>
+
 </html>

@@ -1,13 +1,48 @@
+#preloader{
+    background: #fff url(../imagens/loader.gif) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
 * {
     margin: 0;
     padding: 0;
-
+    
 }
-
+* {
+    scrollbar-width: thin;
+    scrollbar-color: purple rgb(255, 255, 255, 0.5);
+  }
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255, 0.5)
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: purple;
+    border-radius: 20px;
+    border: 3px solid rgb(255, 255, 255, 0.5)
+  }
 body {
-    background-color: #454d6b;
+    
+    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
+
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, green, white, blue);
+    background: -webkit-linear-gradient(45deg, green, white, blue);
+    background: -o-linear-gradient(45deg, green, white, blue);
+    background: -moz-linear-gradient(45deg, green, white, blue);
+    background-size: 300% 300%;
+    animation: colors 15s ease infinite;
 }
+
 
 ul.cabecario li {
     display: inline-block;
@@ -39,12 +74,16 @@ header.cabecario {
     height: 100px;
 }
 
-ul.rodape {
+footer div.rodape {
+    color: #fff;
     margin-top: 150px;
     background-color: black;
     font-family: sans-serif;
     padding: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 ul a img {
@@ -52,18 +91,23 @@ ul a img {
     width: 30px;
 }
 
-ul.rodape li {
+div.rodape ul li {
     padding: auto;
     color: white;
     margin: 20px;
     padding-top: 10px;
     display: block;
 }
+ul li a {
+    text-decoration: none;
+
+}
 
 div.corpo {
     display: block;
     text-align: center;
     font-size: 3vw;
+    
 }
 
 footer div ul.rodape a img {
@@ -117,6 +161,8 @@ nav ul img {
     width: 97%;
     border-radius: 5%;
     border: 2px solid darkblue;
+    display: flex;
+    
 }
 
 .modal {
@@ -124,9 +170,9 @@ nav ul img {
     position: fixed;
     z-index: -1;
     width: 80vw;
-    height: auto;
+    height: 70%;
     left: 50vw;
-    top: 0vh;
+    top: 10vh;
     background-color: white;
     transform: translateY(-25%);
     padding: 1rem;
@@ -143,8 +189,9 @@ nav ul img {
 .modal.visivel {
     opacity: 10;
     transform: translate(-50%);
-    z-index: 1;
+    z-index: 100;
 }
+
 
 .modal>header {
     display: flex;
@@ -261,7 +308,8 @@ th#celula {
 
 button {
     background-color: rgba(1, 16, 59, 1);
-    border: none;
+    border: 3px solid rgb(47, 68, 124);;
+    
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -304,16 +352,31 @@ ul.cabecario li a {
     transition: all 1s;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(45deg, green, white, blue);
-    background: -webkit-linear-gradient(45deg, green, white, blue);
-    background: -o-linear-gradient(45deg, green, white, blue);
-    background: -moz-linear-gradient(45deg, green, white, blue);
-    background-size: 300% 300%;
-    animation: colors 15s ease infinite;
+
+
+div.corpo div.aluno{
+    display: none;
 }
+
+.contatos{
+    width: 20px;
+    height: 20px;
+    transform: translateY(5px);
+    margin-right: 3px;
+}
+
+.cor_link a{
+    color: purple;
+}
+
+.divisoria {
+    border-left: 1px solid rgb(227, 255, 220);
+    height: 200px;
+    width: 1px;
+}
+
+
+
 @keyframes colors {
     0%{
         background-position: 0% 50%;
@@ -330,6 +393,19 @@ body{
     div.corpo b.media {
         bottom: 40vh;
     }
+    
+
+}
+
+@media screen and (max-width: 625px) {
+    footer div.rodape{
+        display: block;
+    }
+
+    .divisoria{
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 887px) {

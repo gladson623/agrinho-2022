@@ -1,5 +1,10 @@
 var imagem = '';
 
+var loader = document.getElementById("preloader")
+window.addEventListener("load", function(){
+    loader.style.display = "none"
+})
+
 function media() {
 
     var nota1 = document.getElementById("nota1").value;
@@ -40,29 +45,6 @@ function media() {
 
 }
 
-function moveImage(media) {
-    let image = document.querySelector('.professoraC');
-    let bold = document.querySelector('.media');
-    let quadro = document.querySelector('.quadro');
-    let btnAverage = document.querySelector('.btnAverage');
-
-
-    image.setAttribute('src', 'imagens/professora.png');
-    image.style.width = '70%';
-    image.style.padding = '0px';
-
-    bold.innerHTML = media;
-    bold.style.color = 'red';
-    // bold.style.position = 'relative';
-    // bold.style.bottom = '350px';
-    // bold.style.right = '25';
-    bold.style.fontSize = '50px'
-    bold.style.userSelect = 'none';
-    
-    quadro.style.textAlign = 'center'
-
-    btnAverage.style.margin = '0'
-}
 
 function presenca() {
 
@@ -101,7 +83,10 @@ function onSelectImage(event) {
     
 	if (!event.target.files.length) return;
 
-    var ajuste = event.path[1]
+    var path = event.path || (event.composedPath && event.composedPath());
+
+    var ajuste = path[1]
+
 	var selectedFile = event.target.files[0];
     //var sumir = document.querySelector('.sumir');
 	

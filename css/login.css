@@ -27,7 +27,7 @@ body {
 
 .card-header::after {
     content: "";
-    width: 70px;
+    width: 175px;
     height: 1px;
     background-color: #fff;
     display: block;
@@ -84,3 +84,38 @@ body {
     align-items: center;
     color: red;
 }
+
+form.card{
+    animation-name: fade;
+    animation-duration: 0.2s;
+    
+}
+form.card .input-block {
+    animation-name: move;
+    animation-duration: 0.5s;
+    animation-delay: 0.25s;
+}
+
+@keyframes move {
+    from{
+        opacity: 0;
+        transform: translate(-15%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0%);
+    }
+} 
+
+@keyframes fade {
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+} 

@@ -14,26 +14,29 @@
 </head>
 
 <body onload="Init()">
+    <div id="preloader"></div>
     <div id="login">
         <form class="card" id="loginForm">
-            <div class="card-header">
-                <h2>Login - Sistema</h2>
-            </div>
-            <div class="card-content">
-                <div class="card-content-area">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" id="usuario" autocomplete="on">
+            <div class="input-block">
+                <div class="card-header">
+                    <h2>Login - Sistema</h2>
                 </div>
-                <div class="card-content-area">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" autocomplete="off">
+                <div class="card-content ">
+                    <div class="card-content-area">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" id="usuario" autocomplete="on">
+                    </div>
+                    <div class="card-content-area">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" autocomplete="off">
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <input id="submitButton" type="submit" value="login" class="submit">
-            </div>
-            <div id="mensagemErro">
+                <div class="card-footer">
+                    <input id="submitButton" type="submit" value="login" class="submit">
+                </div>
+                <div id="mensagemErro">
 
+                </div>
             </div>
         </form>
     </div>
