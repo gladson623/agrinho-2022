@@ -133,8 +133,8 @@ function abreModal(e){
     modalEl.classList.add('visivel')
 }
 
-const botoesDeFechar = document.getElementById('fechar-modal')
-botoesDeFechar.addEventListener('click', fechaModal);
+// const botoesDeFechar = document.getElementById('fechar-modal')
+// botoesDeFechar.addEventListener('click', fechaModal);
 
 function fechaModal(e) {
     
