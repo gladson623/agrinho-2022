@@ -88,6 +88,7 @@ function onSelectImage(event) {
     var ajuste = path[1]
 
 	var selectedFile = event.target.files[0];
+    
     //var sumir = document.querySelector('.sumir');
 	
 	var reader = new FileReader();
