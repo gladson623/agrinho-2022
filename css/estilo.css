@@ -267,13 +267,16 @@ div.dias_semana div input {
 }
 
 .deslogar {
+    cursor: pointer;
     background-color: transparent;
     border: 0px;
     border-radius: 40%;
     width: 30px;
     height: 30px;
-    margin-top: 1%;
+    margin-top: 2%;
+    margin-left: 3%;
     float: left;
+    padding: 0
 }
 
 .deslogar img {
@@ -375,7 +378,9 @@ div.corpo div.aluno{
     width: 1px;
 }
 
-
+.evento_click{
+    pointer-events: none;
+}
 
 @keyframes colors {
     0%{
