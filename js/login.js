@@ -140,113 +140,115 @@ function islogado(type="") {
 
         list.appendChild(el);
     } else {
-        const doc = document.getElementById('corpo dias_semana');
-        let img = getImagem('filesegunda') ;
-        if (img != null) {
-            const img2 = document.createElement('img')
-            const d2 = document.createElement('div')
-
-            img2.src = img ;
-            img2.style.border = 'double';
-        //    img2.style.backgroundSize = 'cover';
-        //    img2.style.backgroundPosition = 'center';
-            img2.style.width= '100%';
-            img2.style.height = '100%'
-            img2.style.maxWidth = '100%'
-            img2.style.maxHeight = '100%'
-
-            d2.className = 'dia'
-            d2.id = 'image-area2'
-            d2.innerHTML = '<p class="dia_semana">Segunda-Feira</p>'
-            d2.appendChild(img2)
-            doc.append(d2)
-        }
-
-        img = getImagem('fileterca') ;
-        if (img != null) {        
-            const img3 = document.createElement('img')
-            const d3 = document.createElement('div')
-
-            img3.src =img ;
-            img3.style.border = 'double';
-         //   img3.style.backgroundSize = 'cover';
-         //   img3.style.backgroundPosition = 'center';
-         //   img3.style.display= 'block';
-            img3.style.width= '100%';
-            img3.style.height = '100%'
-            img3.style.maxWidth = '100%'
-            img3.style.maxHeight = '100%'
+        if (type == 'index') {
+            const doc = document.getElementById('corpo dias_semana');
+            let img = getImagem('filesegunda') ;
+            if (img != null) {
+                const img2 = document.createElement('img')
+                const d2 = document.createElement('div')
+    
+                img2.src = img ;
+                img2.style.border = 'double';
+            //    img2.style.backgroundSize = 'cover';
+            //    img2.style.backgroundPosition = 'center';
+                img2.style.width= '100%';
+                img2.style.height = '100%'
+                img2.style.maxWidth = '100%'
+                img2.style.maxHeight = '100%'
+    
+                d2.className = 'dia'
+                d2.id = 'image-area2'
+                d2.innerHTML = '<p class="dia_semana">Segunda-Feira</p>'
+                d2.appendChild(img2)
+                doc.append(d2)
+            }
+    
+            img = getImagem('fileterca') ;
+            if (img != null) {        
+                const img3 = document.createElement('img')
+                const d3 = document.createElement('div')
+    
+                img3.src =img ;
+                img3.style.border = 'double';
+             //   img3.style.backgroundSize = 'cover';
+             //   img3.style.backgroundPosition = 'center';
+             //   img3.style.display= 'block';
+                img3.style.width= '100%';
+                img3.style.height = '100%'
+                img3.style.maxWidth = '100%'
+                img3.style.maxHeight = '100%'
+                
+                d3.className = 'dia'
+                d3.id = 'image-area3'
+                d3.innerHTML = '<p class="dia_semana">Terca-Feira</p>'
+                d3.appendChild(img3)
+                doc.append(d3)
+            }
+    
+            img = getImagem('filequarta') ;
+            if (img != null) {
+                const img4 = document.createElement('img')
+                const d4 = document.createElement('div')
+    
+                img4.src =img ;
+                img4.style.border = 'double';
+            //    img4.style.backgroundSize = 'cover';
+            //    img4.style.backgroundPosition = 'center';
+            //    img4.style.display= 'block';
+                img4.style.width= '100%';
+                img4.style.height = '100%'
+                img4.style.maxWidth = '100%'
+                img4.style.maxHeight = '100%'
+    
+                d4.className = 'dia'
+                d4.id = 'image-area4'
+                d4.innerHTML = '<p class="dia_semana">Quarta-Feira</p>'
+                d4.appendChild(img4)
+                doc.append(d4)
+            }
+     
+            img = getImagem('filequinta') ;
+            if (img != null) {        
+                const img5 = document.createElement('img')
+                const d5 = document.createElement('div')
+    
+                img5.src = img ;
+                img5.style.border = 'double';
+            //    img5.style.backgroundSize = 'cover';
+            //    img5.style.backgroundPosition = 'center';
+             //   img5.style.display= 'block';
+                img5.style.width= '100%';
+                img5.style.height = '100%'
+                img5.style.maxWidth = '100%'
+                img5.style.maxHeight = '100%'
+                
+                d5.className = 'dia'
+                d5.id = 'image-area5'
+                d5.innerHTML = '<p class="dia_semana">Quinta-Feira</p>'
+                d5.appendChild(img5)
+                doc.append(d5)
+            }
             
-            d3.className = 'dia'
-            d3.id = 'image-area3'
-            d3.innerHTML = '<p class="dia_semana">Terca-Feira</p>'
-            d3.appendChild(img3)
-            doc.append(d3)
-        }
-
-        img = getImagem('filequarta') ;
-        if (img != null) {
-            const img4 = document.createElement('img')
-            const d4 = document.createElement('div')
-
-            img4.src =img ;
-            img4.style.border = 'double';
-        //    img4.style.backgroundSize = 'cover';
-        //    img4.style.backgroundPosition = 'center';
-        //    img4.style.display= 'block';
-            img4.style.width= '100%';
-            img4.style.height = '100%'
-            img4.style.maxWidth = '100%'
-            img4.style.maxHeight = '100%'
-
-            d4.className = 'dia'
-            d4.id = 'image-area4'
-            d4.innerHTML = '<p class="dia_semana">Quarta-Feira</p>'
-            d4.appendChild(img4)
-            doc.append(d4)
-        }
- 
-        img = getImagem('filequinta') ;
-        if (img != null) {        
-            const img5 = document.createElement('img')
-            const d5 = document.createElement('div')
-
-            img5.src = img ;
-            img5.style.border = 'double';
-        //    img5.style.backgroundSize = 'cover';
-        //    img5.style.backgroundPosition = 'center';
-         //   img5.style.display= 'block';
-            img5.style.width= '100%';
-            img5.style.height = '100%'
-            img5.style.maxWidth = '100%'
-            img5.style.maxHeight = '100%'
-            
-            d5.className = 'dia'
-            d5.id = 'image-area5'
-            d5.innerHTML = '<p class="dia_semana">Quinta-Feira</p>'
-            d5.appendChild(img5)
-            doc.append(d5)
-        }
-        
-        img = getImagem('filesexta') ;
-        if (img != null) {        
-            const img6 = document.createElement('img')
-            const d6 = document.createElement('div')
-            img6.src = img ;
-            img6.style.border = 'double';
-        //    img6.style.backgroundSize = 'cover';
-        //    img6.style.backgroundPosition = 'center';
-        //    img6.style.display= 'block';
-            img6.style.width= '100%';
-            img6.style.height = '100%'
-            img6.style.maxWidth = '100%'
-            img6.style.maxHeight = '100%'
-
-            d6.className = 'dia'
-            d6.id = 'image-area6'
-            d6.innerHTML = '<p class="dia_semana">Sexta-Feira</p>'
-            d6.appendChild(img6)
-            doc.append(d6)
+            img = getImagem('filesexta') ;
+            if (img != null) {        
+                const img6 = document.createElement('img')
+                const d6 = document.createElement('div')
+                img6.src = img ;
+                img6.style.border = 'double';
+            //    img6.style.backgroundSize = 'cover';
+            //    img6.style.backgroundPosition = 'center';
+            //    img6.style.display= 'block';
+                img6.style.width= '100%';
+                img6.style.height = '100%'
+                img6.style.maxWidth = '100%'
+                img6.style.maxHeight = '100%'
+    
+                d6.className = 'dia'
+                d6.id = 'image-area6'
+                d6.innerHTML = '<p class="dia_semana">Sexta-Feira</p>'
+                d6.appendChild(img6)
+                doc.append(d6)
+            }
         }
     }
     if (type=="alunos") {

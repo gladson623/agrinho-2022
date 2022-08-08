@@ -382,6 +382,11 @@ div.corpo div.aluno{
     pointer-events: none;
 }
 
+.opcional{
+    color: #333333;
+    font-size: 15px;
+}
+
 @keyframes colors {
     0%{
         background-position: 0% 50%;
@@ -423,14 +428,20 @@ div.corpo div.aluno{
 }
 
 @media screen and (max-width: 458px) {
-
+    .inpTexto{
+        width: 100%;
+    }
     div.corpo div.dia p {
         font-size: x-large;
 
     }
 
     .margem {
-        font-size: x-large;
+        margin: 10px;
+        font-size: xx-large;
+    }
+    .inpTexto{
+        font-size: medium;
     }
 }
 

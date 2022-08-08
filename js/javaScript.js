@@ -10,26 +10,46 @@ function media() {
     var nota1 = document.getElementById("nota1").value;
     var nota2 = document.getElementById("nota2").value;
     var nota3 = document.getElementById("nota3").value;
+    var nota4 = document.getElementById("nota4").value;
 
-    if (nota1 == '') {
+    if (nota1 == '' || nota1 == NaN || nota1 < 0) {
         nota1 = 0;
-    } 
+    }else if(nota1 > 100) {
+        window.alert("opa verificamos que sua primeira nota esta acima do limite, por isso a substituímos por 100")
+        nota1 = 100
+    }
 
-    if (nota2 == '') {
+    if (nota2 == '' || nota2 == NaN || nota2 < 0) {
         nota2 = 0;
-    } 
+    }else if(nota2 > 100) {
+        window.alert("opa verificamos que sua segunda nota esta acima do limite, por isso a substituímos por 100")
+        nota2 = 100
+    }
     
-    if (nota3 == '') {
+    if (nota3 == '' || nota3 == NaN || nota3 < 0) {
         nota3 = 0;
+    }else if(nota3 > 100) {
+        window.alert("opa verificamos que sua terceira nota esta acima do limite, por isso a substituímos por 100")
+        nota3 = 100
+    }
+
+    if (nota4 == '' || nota4 == NaN || nota4 < 0) {
+        nota4 = 0;
+    }else if(nota4 > 100) {
+        window.alert("opa verificamos que sua quarta nota esta acima do limite, por isso a substituímos por 100")
+        nota4 = 100
     }
 
     nota1 = parseFloat(nota1);
     nota2 = parseFloat(nota2);
     nota3 = parseFloat(nota3);
-
+    nota4 = parseFloat(nota4);
     
-
-    var media = parseInt((nota1 + nota2 + nota3) / 3)
+    if(nota4 == 0){
+        var media = parseFloat((nota1 + nota2 + nota3) / 3)
+    }else{
+        var media = parseFloat((nota1 + nota2 + nota3 + nota4) / 4)
+    }
 
     if (media >= 60) {
         if (media == 100) {
@@ -41,7 +61,7 @@ function media() {
         alert("Reprovado! Media " + media)
     }
 
-    moveImage(media);
+    
 
 }
 
@@ -50,11 +70,15 @@ function presenca() {
 
     var dia = document.getElementById("dia").value;
     var falta = document.getElementById("falta").value;
+    if (dia <= 0){
+        dia = 5;
+        alert("voce colocou um numero invalido nas aulas por dia, por isso o substituimos por 5")
+    }
 
-    if (dia == '' || dia == "NaN" || dia == 0) {
+    if (dia == '' || dia == NaN || dia <= 0 ) {
         dia = 1;
     } 
-    if (falta == '' || falta == "NaN") {
+    if (falta == '' || falta == NaN || falta <= 0){
         falta = 0;
     } 
     //console.log(dia)
@@ -71,8 +95,13 @@ function presenca() {
     var quantidadeDiaFalta = parseInt((quantidadeFalta / dia - falta))
     var quantidadeAulasFalta = parseInt(((quantidadeFalta / dia - falta) * dia))
     
+    if(quantidadeDiaFalta < 0) {
+        alert("voce foi reprovado...")
+    } else{
+        alert("voce ainda pode faltar " + quantidadeDiaFalta + " dias ou " + quantidadeAulasFalta + " aulas");
 
-    alert("voce ainda pode faltar " + quantidadeDiaFalta + " dias ou " + quantidadeAulasFalta + " aula");
+    }
+
 
 }
 
@@ -132,10 +161,11 @@ function inserirBotaoModal (event) {
 function abreModal(e){
     const modalEl = document.querySelector('.modal')
     modalEl.classList.add('visivel')
+    const botoesDeFechar = document.getElementById('fechar-modal')
+botoesDeFechar.addEventListener('click', fechaModal);
 }
 
-const botoesDeFechar = document.getElementById('fechar-modal')
-botoesDeFechar.addEventListener('click', fechaModal);
+
 
 function fechaModal(e) {
     
