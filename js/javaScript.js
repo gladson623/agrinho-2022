@@ -13,41 +13,50 @@ function media() {
     var nota4 = document.getElementById("nota4").value;
 
     if (nota1 == '' || nota1 == NaN || nota1 < 0) {
+        alert("Primeira nota invalida, substituímos por 0");
         nota1 = 0;
     }else if(nota1 > 100) {
-        window.alert("opa verificamos que sua primeira nota esta acima do limite, por isso a substituímos por 100")
+        
+        alert("Verificamos que sua primeira nota esta acima do limite, por isso a substituímos por 100")
         nota1 = 100
     }
 
     if (nota2 == '' || nota2 == NaN || nota2 < 0) {
+        alert("Segunda nota invalida, substituímos por 0");
         nota2 = 0;
     }else if(nota2 > 100) {
-        window.alert("opa verificamos que sua segunda nota esta acima do limite, por isso a substituímos por 100")
+        alert("Verificamos que sua segunda nota esta acima do limite, por isso a substituímos por 100")
         nota2 = 100
     }
     
     if (nota3 == '' || nota3 == NaN || nota3 < 0) {
+        alert("Terceira nota invalida, substituímos por 0");
         nota3 = 0;
     }else if(nota3 > 100) {
-        window.alert("opa verificamos que sua terceira nota esta acima do limite, por isso a substituímos por 100")
+        alert("Verificamos que sua terceira nota esta acima do limite, por isso a substituímos por 100")
         nota3 = 100
     }
-
-    if (nota4 == '' || nota4 == NaN || nota4 < 0) {
+    if (nota4 < 0){
+        alert("Quarta nota invalida, substituímos por 0");
         nota4 = 0;
+    } 
+    if (nota4 == '' || nota4 == NaN ) {
+        
+        nota4 = "a";
     }else if(nota4 > 100) {
-        window.alert("opa verificamos que sua quarta nota esta acima do limite, por isso a substituímos por 100")
+        alert("Verificamos que sua quarta nota esta acima do limite, por isso a substituímos por 100")
         nota4 = 100
     }
 
     nota1 = parseFloat(nota1);
     nota2 = parseFloat(nota2);
     nota3 = parseFloat(nota3);
-    nota4 = parseFloat(nota4);
     
-    if(nota4 == 0){
+    if(nota4 == "a"){
+        nota4 = 0
         var media = parseFloat((nota1 + nota2 + nota3) / 3)
     }else{
+        nota4 = parseFloat(nota4)
         var media = parseFloat((nota1 + nota2 + nota3 + nota4) / 4)
     }
 
@@ -72,13 +81,16 @@ function presenca() {
     var falta = document.getElementById("falta").value;
     if (dia <= 0){
         dia = 5;
-        alert("voce colocou um numero invalido nas aulas por dia, por isso o substituimos por 5")
+        alert("Você colocou um numero invalido nas aulas por dia, por isso o substituimos por 5")
+    }else if(falta < 0) {
+        falta = 0;
+        alert("Você colocou um numero invalido nas faltas, por isso o substituimos por 0")
     }
 
-    if (dia == '' || dia == NaN || dia <= 0 ) {
+    if (dia == '' || dia == NaN) {
         dia = 1;
     } 
-    if (falta == '' || falta == NaN || falta <= 0){
+    if (falta == '' || falta == NaN  ){
         falta = 0;
     } 
     //console.log(dia)
